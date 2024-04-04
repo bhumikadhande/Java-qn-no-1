@@ -1,0 +1,21 @@
+public class DuplicateCharacterFinder {
+    public static void findDuplicatesUsingCharacterCount(String input) {
+        int[] characterCount = new int[256]; // Assuming ASCII characters
+
+        System.out.print("Duplicate Characters using Character Count: ");
+        for (char character : input.toCharArray()) {
+            characterCount[character]++;
+        }
+
+        for (int i = 0; i < 256; i++) {
+            if (characterCount[i] > 1) {
+                System.out.print((char) i + " ");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        String input = "programming";
+        findDuplicatesUsingCharacterCount(input);
+    }
+}
